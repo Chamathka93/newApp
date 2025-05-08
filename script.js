@@ -38,8 +38,32 @@ function renderItems(){
 
 }
 
-form.addEventListener('submit',(e) => {
-    e.preventDefault();
-    const name = nameInput.ariaValueMax.trim();
-    const category = categoryInput.ariaValueMax.trim();
-})
+
+
+function add(){
+      const addName = nameInput.value.trim();
+      const addCategory = categoryInput.value.trim();
+      const addPrice = priceInput.value.trim();
+
+      if()
+}
+
+function toggleBought(index){
+    items[index].bought = !items[index].bought;
+    saveItems();
+    renderItems();
+}
+
+function removeItem(index){
+    items.splice(index,1);
+    saveItems();
+    renderItems();
+}
+
+sortBtn.addEventListener('click', () =>{
+    items.sort((a,b) => a.price - b.price);
+    saveItems();
+    renderItems();
+});
+
+renderItems();
